@@ -1,3 +1,4 @@
+#--------------------1975--------------------
 f = open("Files/24_tasks/24_1.txt").readline()
 
 bestAmount = 0
@@ -11,4 +12,5 @@ for i in range(len(f)-1):
     currentAmount += 1
     lastLetter = f[i]
 print(bestAmount)
+#--------------------------------------------
         

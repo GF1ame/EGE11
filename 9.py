@@ -1,4 +1,4 @@
-# f = open("Files/9_tasks/9_3.txt")
+# f = open("Files/9_tasks/9_3.txt")idk which one is this xd
 # counter = 0
 # for x in f:
 #     x = sorted(list(map(int,x.split())))
@@ -11,7 +11,7 @@
 # f = open("Files/9_tasks/9_4.txt")
 
 # summa = []
-# for x in f:
+# for x in f:idk which one is this xd
 #     x = sorted(list(map(int,x.split())))
 #     if (x[0]**2) in x:
 #         print(x)
@@ -30,14 +30,15 @@
 #     summa.append(sum(x))
 # print(min(summa))
 
+#--------------------27764--------------------
+f = open("Files/9_tasks/9_5.txt")
+summa = []
+counter = 0
 
-# f = open("Files/9_tasks/9_5.txt")
-
-# summa = []
-# counter = 0
-# for x in f:
-#     x = sorted(map(int,x.split()))
-#     if len(x) != len(set(x)) : continue
-#     if (2 * (x[0]+x[-1])) != sum(x[1:4]):continue
-#     counter += 1
-# print(counter)
+for x in f:
+    x = sorted(map(int,x.split()))
+    if len(x) != len(set(x)) : continue
+    if (2 * (x[0]+x[-1])) != sum(x[1:4]):continue
+    counter += 1
+print(counter)
+#---------------------------------------------

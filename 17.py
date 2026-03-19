@@ -1,3 +1,4 @@
+#--------------------16264--------------------
 f = open("Files/17_tasks/17_2.txt")
 a = [int(i) for i in f]
 minimumKratn = 0
@@ -23,3 +24,4 @@ for i in range(len(a) - 1):
         maxSum = a[i] + a[i+1]
     amount += 1
 print(amount,maxSum)
+#---------------------------------------------

@@ -1,15 +1,9 @@
+#--------------------GENERAL TURTLE EXPLANATION--------------------
 import turtle as t
 
 t.tracer(0)
 t.screensize(2000,2000)
 step = 20
-
-t.right(90)
-
-# for x in range(7):
-#     t.right(45)
-#     t.forward(11*step)
-#     t.right(45)
 
 for x in range(2):
     t.forward(21 * step)
@@ -35,3 +29,5 @@ for x in range(-40,40):
         t.dot(4,"Red")
 
 t.exitonclick()
+
+#------------------------------------------------------------------

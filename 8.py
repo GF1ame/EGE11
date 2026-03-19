@@ -1,5 +1,5 @@
 from itertools import product
-
+#--------------------2464--------------------
 letters = ["Н","И","Ч","Ь","Я"]
 vowels = ["И","Я"]
 counter = 0
@@ -25,7 +25,7 @@ for q,w,e,r,t,y,u in product(letters,repeat=7):
     if not valid: continue
     counter += 1
 print(counter)
-
+#--------------------------------------------
 
 
     

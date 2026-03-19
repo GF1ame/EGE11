@@ -1,3 +1,4 @@
+#--------------------4114--------------------
 from itertools import product
 import time
 found = {
@@ -12,3 +13,4 @@ for a0,a1,a2,a3,a4 in product(digits,repeat=5):
             found[number] = number // 39
 for i in sorted(found)[:10]:
     print(i,i//39)
+#--------------------------------------------
