@@ -23,3 +23,18 @@ sys.setrecursionlimit('WHATEVER NUMBER THAT FITS CONDITION')
 All your stuff here...
 
 '''
+
+#OTHER
+# import sys
+# sys.setrecursionlimit(10000)
+
+# @lru_cache()
+# def f(n):
+#     if n == 1: return 1
+#     if n > 1:
+#         return n * f(n-1)
+
+
+# for x in range(2025): f(x)
+
+# print(int((2 * f(2024) + f(2023))/f(2022)))
