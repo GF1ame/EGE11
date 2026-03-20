@@ -4,6 +4,14 @@ x = f.split()
 current = ""
 maximum = ""
 newList = []
+
+def saveState():
+    global current
+    global maximum
+    if len(current) > len(maximum):
+        maximum = current
+    current = ""
+
 for i in x:
     i = i.replace("("," ").replace(")"," ")
     splitted = i.split()
@@ -14,23 +22,15 @@ for i in x:
     newList += splitted
 for i in newList:
     if i == "":
-        if len(current) > len(maximum):
-            maximum = current
-        current = ""
+        saveState()
         continue
     a = str(i).replace("+"," ").replace("-"," ").split()
     if len(a) != 2: continue
     if int(a[0]) % 5 == 0 or int(a[1]) % 5 != 0 or a[0][0] == "0" or a[1][0] == "0":
-        if len(current) > len(maximum):
-            maximum = current
-        current = ""
+        saveState()
         continue
     current += f'({a[0]}+{a[1]})'
-print(len(maximum),maximum)
-# for i in range(len(f)):
-#     for x in range(i,len(f)-1):
-#         print(f[x])
-    
+print(len(maximum))
 
 #--------------------1975--------------------
 # f = open("Files/24_tasks/24_1.txt").readline()
@@ -47,3 +47,9 @@ print(len(maximum),maximum)
 #     lastLetter = f[i]
 # print(bestAmount)
 #--------------------------------------------
+
+# import time
+
+# start = time.perf_counter()
+# end = time.perf_counter()
+# print(f"Время выполнения: {end - start:.6f} секунд")
