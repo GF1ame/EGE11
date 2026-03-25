@@ -1,5 +1,5 @@
 from itertools import product
-#--------------------2464--------------------
+#--------------------2464---------------------
 letters = ["Н","И","Ч","Ь","Я"]
 vowels = ["И","Я"]
 counter = 0
@@ -25,7 +25,26 @@ for q,w,e,r,t,y,u in product(letters,repeat=7):
     if not valid: continue
     counter += 1
 print(counter)
-#--------------------------------------------
+#--------------------19753--------------------
+digits = [0,1,2,3,4,5,6,7,8,9]
+chet = [0,2,4,6,8]
+
+from itertools import product
+amount = 0
+for q,w,e,r,t,y in product(digits,repeat = 6):
+    digit = f'{q}{w}{e}{r}{t}{y}'
+    passed = True
+    if len(str(int(digit))) != 6: passed = False
+    if int(digit) % 4 != 0:passed = False
+    if len(set(digit)) != len(digit): passed = False
+    for i in range(len(digit)-1):
+        if int(digit[i]) in chet and int(digit[i+1]) in chet:
+            passed = False
+            break
+    if not passed: continue
+    amount += 1
+print(amount)
+#---------------------------------------------
 
 
 #OTHER

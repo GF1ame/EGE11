@@ -1,3 +1,31 @@
+#--------------------27764--------------------
+f = open("Files/9_tasks/9_27764.txt")
+summa = []
+counter = 0
+
+for x in f:
+    x = sorted(map(int,x.split()))
+    if len(x) != len(set(x)) : continue
+    if (2 * (x[0]+x[-1])) != sum(x[1:4]):continue
+    counter += 1
+print(counter)
+#--------------------2048--------------------
+f = open("Files/9_tasks/9_2048.txt")
+counter = 0
+for x in f:
+    x = list(map(int,x.split()))
+    if sum(x) != 360: continue
+    a,b,c,d = x[0],x[1],x[2],x[3]
+    isTrapezoid = ((a + b == 180 and c+d == 180) or (b+c == 180 and d+a == 180))
+    if not isTrapezoid: continue
+    is_parallelogramm = (a == c and b == d)
+    if not is_parallelogramm:
+        counter += 1
+print(counter)
+#---------------------------------------------
+
+
+#OTHER
 # f = open("Files/9_tasks/9_3.txt")idk which one is this xd
 # counter = 0
 # for x in f:
@@ -29,16 +57,3 @@
 #     print(x)
 #     summa.append(sum(x))
 # print(min(summa))
-
-#--------------------27764--------------------
-f = open("Files/9_tasks/9_5.txt")
-summa = []
-counter = 0
-
-for x in f:
-    x = sorted(map(int,x.split()))
-    if len(x) != len(set(x)) : continue
-    if (2 * (x[0]+x[-1])) != sum(x[1:4]):continue
-    counter += 1
-print(counter)
-#---------------------------------------------

@@ -1,3 +1,4 @@
+#--------------------28007--------------------
 f = open('Files/24_tasks/24_28007.txt').readline()
 f = f.replace(")(",") (")
 x = f.split()
@@ -31,21 +32,38 @@ for i in newList:
         continue
     current += f'({a[0]}+{a[1]})'
 print(len(maximum))
+#--------------------7688---------------------
 
-#--------------------1975--------------------
-# f = open("Files/24_tasks/24_1.txt").readline()
+t = open("Files/24_tasks/24_7688.txt").readline()
+t = t.replace("TXA","^").replace("XA","*").replace("XY","*")
+amount = 0
+maxAmount = 0
+lastDigit = ""
+for x in t:
+    if x == "*":
+        amount += 2
+    elif x == "^":
+        amount+= 3
+    else:
+        maxAmount = max(maxAmount, amount)
+        amount = 0
+    lastDigit = x
+print(maxAmount)
 
-# bestAmount = 0
-# currentAmount = 0
-# lastLetter = ""
+#--------------------1975---------------------
+f = open("Files/24_tasks/24_1975.txt").readline()
 
-# for i in range(len(f)-1):
-#     if f[i] == f[i+1] == "P":
-#         bestAmount = max(bestAmount,currentAmount)
-#         currentAmount = 0
-#     currentAmount += 1
-#     lastLetter = f[i]
-# print(bestAmount)
+bestAmount = 0
+currentAmount = 0
+lastLetter = ""
+
+for i in range(len(f)-1):
+    if f[i] == f[i+1] == "P":
+        bestAmount = max(bestAmount,currentAmount)
+        currentAmount = 0
+    currentAmount += 1
+    lastLetter = f[i]
+print(bestAmount)
 #--------------------------------------------
 
 # import time

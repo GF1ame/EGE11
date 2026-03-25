@@ -1,9 +1,9 @@
-#--------------------9545--------------------
+#--------------------9545---------------------
 def del10(x):
     return x % 10 == 0
 def del26(x):
     return x % 26 == 0
-
+table = []
 for A in range(1000):
     fits = True
     for x in range(1000):
@@ -11,10 +11,24 @@ for A in range(1000):
         fits = False
         break
     if fits:
-        print(A)
-#--------------------------------------------
-
+        table.append(A)
+print(max(table))
+#--------------------12247--------------------
+def main(x,A):
+    return ((x&A) == 0) or ((x&37)!=0) or ((x&12)!=0)
+table = []
+for A in range(1000):
+    state = True
+    for x in range(1000):
+        if main(x,A): continue
+        state = False
+        break
+    if state:
+        table.append(A)
+print(max(table))
+#---------------------------------------------
 #OTHER
+
 #ДЕЛЕНИЕ
 # B = [i for i in range(160,181)]
 

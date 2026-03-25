@@ -11,6 +11,16 @@ for i in range(2025):
     F(i)
 
 print(F(2025)-F(2021))
+
+#--------------------8680---------------------
+import sys
+sys.setrecursionlimit(1000000)
+def H(x):
+    if x >= 4040:
+        return x
+    return x + 4 + H(x+4)
+
+print(H(3)-H(15))
 #---------------------------------------------
 
 '''

@@ -4,9 +4,21 @@ def F(n1,n2,n3,s):
     if s == 0: return 0
     f = [F(n1 * 2,n2,n3,s-1),F(n1,n2*2,n3,s-1),F(n1,n2,n3*2,s-1),F(n1 + 2,n2 + 2,n3 + 2,s-1)]
     return any(f) if (s-1)%2 == 0 else all(f)
-print("19",[i for i in range(1,19) if F(2,3,i,2)])
-print("20",[i for i in range(1,19) if not F(2,3,i,1) and F(2,3,i,3)])
-print("21",[i for i in range(1,19) if not F(2,3,i,2) and F(2,3,i,4)])
+print("19_14954",[i for i in range(1,19) if F(2,3,i,2)])
+print("20_14954",[i for i in range(1,19) if not F(2,3,i,1) and F(2,3,i,3)][:2])
+print("21_14954",min([i for i in range(1,19) if not F(2,3,i,2) and F(2,3,i,4)]))
+
+#--------------------11277--------------------
+
+def F(n,m):
+    if n >= 268: return m%2==0
+    if m == 0: return 0
+    h = [F(n+1,m-1),F(n+3,m-1),F(n*4,m-1)]
+    return any(h) if (m-1) % 2 == 0 else all(h)
+print("19_11277",[i for i in range(1,267) if F(i,2)])#replace 'all' to 'any' to get proper answer
+print("20_11277",[i for i in range(1,267) if not F(i,1) and F(i,3)][:2])
+print("21_11277",min([i for i in range(1,267) if not F(i,2) and F(i,4)]))
+
 #---------------------------------------------
 
 #OTHER
