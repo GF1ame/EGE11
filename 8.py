@@ -24,12 +24,11 @@ for q,w,e,r,t,y,u in product(letters,repeat=7):
             break
     if not valid: continue
     counter += 1
-print(counter)
+#print(counter)
 #--------------------19753--------------------
 digits = [0,1,2,3,4,5,6,7,8,9]
 chet = [0,2,4,6,8]
 
-from itertools import product
 amount = 0
 for q,w,e,r,t,y in product(digits,repeat = 6):
     digit = f'{q}{w}{e}{r}{t}{y}'
@@ -43,7 +42,20 @@ for q,w,e,r,t,y in product(digits,repeat = 6):
             break
     if not passed: continue
     amount += 1
-print(amount)
+#print(amount)
+
+#--------------------23808--------------------
+counter = 0
+bestPlacement = 0
+for i in product(["А","Е","К","Н","О","Т",],repeat = 7):
+    counter += 1
+    word = "".join(i)
+    if word.count("О") == 2 and word.count("К") == 2 and word.count("Т") == 1 and word.count("Е") == 1 and word.count("Н") == 1:
+        if counter % 2 == 0: continue
+        print(counter)
+        bestPlacement = counter
+#print(bestPlacement)
+
 #---------------------------------------------
 
 

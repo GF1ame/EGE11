@@ -19,4 +19,16 @@ for a1,a2,a3,a4,a5 in product([0,1],repeat=5):
         for p in permutations('xywz'):
             if [f(**dict(zip(p,r))) for r in table]==[1,0,1]:
                 print(p)
+
+#--------------------23725-------------------
+
+print("m e o w")
+for m in range(2):
+    for e in range(2):
+        for o in range(2):
+            for w in range(2):
+                f = (m <= e) or (o == e) and w
+                if f:continue
+                print(m,e,o,w)
+
 #--------------------------------------------
