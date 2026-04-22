@@ -149,6 +149,72 @@ q = [
 # print(int(min(q)*10000))
 # print(int(max(q)*10000))
 
+clA = [[],[]]
+clB = [[],[],[]]
+
+for s in open("Files/27_tasks/27A_28766.txt"):
+    x,y,t = [d for d in s.replace(",",".").split()]
+    x,y = float(x),float(y)
+    a,b,c = t[0],t[1],t[2:]
+    if y > 10:
+        clA[0].append([x,y,a+c])
+    else:
+        clA[1].append([x,y,a+c])
+
+
+for s in open("Files/27_tasks/27B_28766.txt"):
+    x,y,t = [d for d in s.replace(",",".").split()]
+    x,y = float(x),float(y)
+    a,b,c = t[0],t[1],t[2:]
+    if y>22:
+        clB[0].append([x,y,a+c])
+    elif x > 22:
+        clB[1].append([x,y,a+c])
+    else:
+        clB[2].append([x,y,a+c])
+
+def centr(cl):
+    m = []
+    for p in cl:
+        s = sum(dist(p[:2],p1[:2]) for p1 in cl)
+        m.append([s,p])
+    return min(m)[1]
+
+
+worstCluster = min([[len(i),i] for i in clA])[1]
+
+centrOfWorstCluster = centr(worstCluster)
+maxLength = 0
+minLenght = 99999
+
+for cl in clA:
+    for i in cl:
+        if i[2] == "YIII":
+            print(i)
+            maxLength = max(maxLength, dist(centrOfWorstCluster[:2],i[:2]))
+            minLenght = min(minLenght, dist(centrOfWorstCluster[:2],i[:2]))
+print(int(maxLength*10000))
+print(int(minLenght*10000))
+
+zi = []
+for cls in clB:
+    for cl in cls:
+        if cl[2] == "ZI":
+            a = sorted([dist(cl[:2],cl1[:2]) for cl1 in cls if cl1[2]=="ZI"])
+            if len(a) > 1:
+                zi.append(a[1])
+print(int(min(zi)*10000))
+
+
+yellowGiants = []
+
+for cls in clB:
+    a = len([cl for cl in cls if cl[2] == "ZI"])
+    yellowGiants.append([a,cls])
+print(int(dist(centr(min(yellowGiants)[1])[:2],centr(max(yellowGiants)[1])[:2]) * 10000))
+
+
+
 
 
 #---------------------------------------------

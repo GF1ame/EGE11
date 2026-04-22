@@ -31,4 +31,16 @@ print("-------7601-------")
 for i in sorted(a)[:10]:
     print(i,i//273)
 
+#--------------------27635--------------------
+
+from fnmatch import *
+
+m = []
+for i in range(0,10**8,171):
+    if fnmatch(str(i),"1*23??56"):
+        m.append(i)
+
+for i in range(len(m)):
+    print(m[i],m[i]/171)
+
 #---------------------------------------------

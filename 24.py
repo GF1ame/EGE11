@@ -65,17 +65,13 @@ for i in range(len(f)-1):
     lastLetter = f[i]
 print(bestAmount)
 #--------------------2420---------------------
-f = open("Files/24_tasks/24_2420.txt").readline().replace("A","*").replace("B","*").replace("E","*").replace("F","*")
-counter = 0
-bestCounter = 0
-for i in range(len(f)-1):
-    if f[i] == f[i+1] == "*":
-        counter += 1
-        continue
-    bestCounter = max(bestCounter,counter)
-    counter = 0
-print(bestCounter)
+f = open("Files/24_tasks/24_2420.txt").readline().replace("C"," ").replace("D"," ")
 
+print(max([len(i) for i in f.split()]))
+#--------------------2426---------------------
+n = open("Files/24_tasks/24_2426.txt").readline().replace("A"," ").replace("B"," ").replace("C"," ")
+
+print(max([len(i) for i in n.split()]))
 #--------------------------------------------
 
 # import time
