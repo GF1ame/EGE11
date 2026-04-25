@@ -149,6 +149,8 @@ q = [
 # print(int(min(q)*10000))
 # print(int(max(q)*10000))
 
+#--------------------28776--------------------
+
 clA = [[],[]]
 clB = [[],[],[]]
 
@@ -180,7 +182,6 @@ def centr(cl):
         m.append([s,p])
     return min(m)[1]
 
-
 worstCluster = min([[len(i),i] for i in clA])[1]
 
 centrOfWorstCluster = centr(worstCluster)
@@ -190,7 +191,6 @@ minLenght = 99999
 for cl in clA:
     for i in cl:
         if i[2] == "YIII":
-            print(i)
             maxLength = max(maxLength, dist(centrOfWorstCluster[:2],i[:2]))
             minLenght = min(minLenght, dist(centrOfWorstCluster[:2],i[:2]))
 print(int(maxLength*10000))
@@ -205,16 +205,11 @@ for cls in clB:
                 zi.append(a[1])
 print(int(min(zi)*10000))
 
-
 yellowGiants = []
 
 for cls in clB:
     a = len([cl for cl in cls if cl[2] == "ZI"])
     yellowGiants.append([a,cls])
 print(int(dist(centr(min(yellowGiants)[1])[:2],centr(max(yellowGiants)[1])[:2]) * 10000))
-
-
-
-
 
 #---------------------------------------------
