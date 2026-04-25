@@ -8,7 +8,7 @@ for x in f:
     if len(x) != len(set(x)) : continue
     if (2 * (x[0]+x[-1])) != sum(x[1:4]):continue
     counter += 1
-print(counter)
+# print(counter)
 #--------------------2048--------------------
 f = open("Files/9_tasks/9_2048.txt")
 counter = 0
@@ -21,7 +21,18 @@ for x in f:
     is_parallelogramm = (a == c and b == d)
     if not is_parallelogramm:
         counter += 1
+# print(counter)
+#--------------------28755--------------------
+counter = 0
+x = open("Files/9_tasks/9_28755.txt")
+for i in x:
+    i = list(map(int,i.split()))
+    sortedI = sorted(i)
+    if sum(sortedI[:-1]) <= sortedI[-1]: continue
+    if sortedI[0] + sortedI[-1] == sortedI[1] + sortedI[2] or sortedI[0] + sortedI[2] == sortedI[1] + sortedI[-1]: continue
+    counter += 1
 print(counter)
+
 #---------------------------------------------
 
 
