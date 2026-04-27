@@ -45,5 +45,17 @@ for N in range(1,1000):
     if R < 200:
         spisok.append(N)
 # print(sum(spisok)//len(spisok))
-        
+
+#--------------------5280---------------------
+a = []
+for N in range(1,1000):
+    binary = bin(N)[2:]
+    if binary.count("1") % 2 == 0:
+        binary = "1" + binary[:-2] + "01"
+    else:
+        binary = "1" + binary[2:] + "10"
+    R = int(binary,2)
+    if R<=100:
+        a.append(R)
+print(max(a))
 #---------------------------------------------

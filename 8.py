@@ -56,6 +56,14 @@ for i in product(["А","Е","К","Н","О","Т",],repeat = 7):
         bestPlacement = counter
 #print(bestPlacement)
 
+#---------------------797---------------------
+counter = 0
+for i in product(["Ч","И","С","Т","Ы","Й","Р","А","З","У","М",],repeat = 5):
+    word = "".join(i)
+    if word.count("Й") > 1: continue
+    counter += 1
+print(counter)
+
 #---------------------------------------------
 
 

@@ -72,6 +72,26 @@ print(max([len(i) for i in f.split()]))
 n = open("Files/24_tasks/24_2426.txt").readline().replace("A"," ").replace("B"," ").replace("C"," ")
 
 print(max([len(i) for i in n.split()]))
+#--------------------4682---------------------
+
+n = open("Files/24_tasks/24_4682.txt").readline()
+
+for i in "AE": n = n.replace(i,"+")
+for i in "BCD": n = n.replace(i,"-")
+
+mx = 1
+
+for l in range(len(n)):
+    for r in range(l+mx,len(n)):
+        s = n[l:r+1]
+        if s[:2] == "+-" and s[-2:] == "+-":
+            if "--" in s or "++" in s: break
+            if "+-" in s:
+                mx = max(mx, len(s))
+print(mx)
+        
+
+        
 #--------------------------------------------
 
 # import time
