@@ -74,24 +74,42 @@ n = open("Files/24_tasks/24_2426.txt").readline().replace("A"," ").replace("B","
 print(max([len(i) for i in n.split()]))
 #--------------------4682---------------------
 
+from re import *
+
 n = open("Files/24_tasks/24_4682.txt").readline()
 
-for i in "AE": n = n.replace(i,"+")
-for i in "BCD": n = n.replace(i,"-")
+reg = r'([AE][BCD])+'
+mx = 0
+for x in finditer(reg,n):
+    mx = max(len(x.group()),mx)
+print(mx//2)
+    
+#--------------------28765--------------------
 
-mx = 1
+n = open("Files/24_tasks/24_28765.txt").readline()
 
-for l in range(len(n)):
-    for r in range(l+mx,len(n)):
-        s = n[l:r+1]
-        if s[:2] == "+-" and s[-2:] == "+-":
-            if "--" in s or "++" in s: break
-            if "+-" in s:
-                mx = max(mx, len(s))
-print(mx)
+a = ''
+l = 0
+mx = 0
+bcCounter = 0
+
+for r in range(len(n)):
+    if a[-2:] == "BC":
+        bcCounter += 1
+    while bcCounter>180:
+        if a[:2] == "BC":
+            bcCounter -= 1
+        l += 1
+        a = n[l:r]
+    a = n[l:r]
+    mx = max(len(a),mx)
+print(mx-1)
+
+
         
 
-        
+
+
 #--------------------------------------------
 
 # import time
