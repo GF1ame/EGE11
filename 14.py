@@ -53,6 +53,19 @@ for i in range(100):
     if custom("KOT",i) + custom("GOLODNI",i) == custom("MEEOW",i) * custom("100",i) - 20194023088:
         print(custom("PURR",i))
 
+#--------------------18122--------------------
+
+def system(num):
+    newStr = ""
+    while num > 0:
+        newStr = str(num % 5) + newStr
+        num //= 5
+    return newStr
+
+for x in range(5556):
+    if system(5 ** 150 + 5 ** 135 - x).count("4") == 134:
+        print(x)
+
 #---------------------------------------------
 
 #OTHER

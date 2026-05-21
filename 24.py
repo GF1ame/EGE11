@@ -76,7 +76,53 @@ n = open("Files/24_tasks/24_2426.txt").readline().replace("A"," ").replace("B","
 print(max([len(i) for i in n.split()]))
 #--------------------4682---------------------
 
+from re import *
+
 n = open("Files/24_tasks/24_4682.txt").readline()
+
+reg = r'([AE][BCD])+'
+mx = 0
+for x in finditer(reg,n):
+    mx = max(len(x.group()),mx)
+print(mx//2)
+    
+#--------------------28765--------------------
+
+n = open("Files/24_tasks/24_28765.txt").readline()
+
+a = ''
+l = 0
+mx = 0
+bcCounter = 0
+
+# for r in range(len(n)):
+#     if a[-2:] == "BC":
+#         bcCounter += 1
+#     while bcCounter>180:
+#         if a[:2] == "BC":
+#             bcCounter -= 1
+#         l += 1
+#         a = n[l:r]
+#     a = n[l:r]
+#     mx = max(len(a),mx)
+# print(mx-1)
+
+#--------------------17756--------------------
+print("-------17756-------")
+
+n = open("Files/24_tasks/24_17756.txt").readline().replace("*","!").replace("+","!")
+
+counter = 0
+bestCount = 0
+for i in range(len(n)-1):
+    if n[i]+n[i+1] == "!!":
+        bestCount = max(bestCount,counter)
+        counter = 0
+        continue
+    counter += 16
+print(bestCount+1)
+
+        
 
 for i in "AE": n = n.replace(i,"+")
 for i in "BCD": n = n.replace(i,"-")
@@ -147,6 +193,6 @@ print(m)
 
 
 
-         
+ 
 #--------------------------------------------
 

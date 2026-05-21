@@ -212,4 +212,56 @@ for cls in clB:
     yellowGiants.append([a,cls])
 print(int(dist(centr(min(yellowGiants)[1])[:2],centr(max(yellowGiants)[1])[:2]) * 10000))
 
+#--------------------19647--------------------
+
+clA = [[],[]]
+clB = [[],[],[]]
+
+a27 = open("Files/27_tasks/27A_19647.txt")
+b27 = open("Files/27_tasks/27B_19647.txt")
+
+rA = a27.readline().split()[0]
+rB = b27.readline().split()[0]
+
+skip = 0
+for s in a27:
+    if skip == 0:
+         skip = 1
+         continue
+    x,y = [float(d) for d in s.replace(",",".").split()]
+    if x > 4:
+        clA[0].append([x,y])
+    else:
+        clA[1].append([x,y])
+
+for s in b27:
+    if skip == 1:
+        skip = 0
+        continue
+    x,y = [float(d) for d in s.replace(",",".").split()]
+    if x < 10.5:
+        clB[0].append([x,y])
+    elif y < 18:
+        clB[1].append([x,y])
+    else:
+        clB[2].append([x,y])
+b = [[float(i) for i in j.split()] for j in b27]
+
+def centr(cl):
+    m = []
+    for c in b:
+        s = sum(dist(c,cl1) for cl1 in cl)
+        m.append([s,c])
+    return min(m)[1]
+
+cn1 = centr(clB[0])
+cn2 = centr(clB[1])
+cn3 = centr(clB[2])
+a = [[9.3076, 21.1009], [13.0057, 15.9721], [12.2501, 24.1383]]
+print(centr(a))
+
+
+
+
+
 #---------------------------------------------

@@ -62,3 +62,36 @@
 #         t.dot(4,"Red")
 
 # t.exitonclick()
+
+from turtle import * 
+
+screensize(2000,2000)
+tracer(0)
+step = 10
+
+for i in range(4):
+    forward(16*step)
+    left(90)
+    forward(20*step)
+    left(90)
+up()
+forward(4*step)
+left(90)
+forward(8*step)
+right(180)
+down()
+
+for i in range(3):
+    forward(35*step)
+    left(90)
+    forward(6*step)
+    left(90)
+up()
+
+for x in range(-40,40):
+    for y in range(-40,40):
+        goto(x*step,y*step)
+        dot(2,"Red")
+
+done()
+

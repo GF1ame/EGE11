@@ -43,4 +43,121 @@ for i in range(0,10**8,171):
 for i in range(len(m)):
     print(m[i],m[i]/171)
 
+#--------------------28711--------------------
+print("-------28711-------")
+counter = 0
+def mnoj(n):
+    d=[]
+    i=2
+    while i**2<=n:
+        while n%i==0: 
+            d.append(i)
+            n=n//i
+        i+=1
+    if n>1:
+        d.append(n)
+    return d
+for n in range(2400001, 2400001+1000000):
+    if counter == 5: break
+    d=mnoj(n)
+    d1=[int(x) for x in d if (str(x).count('4')>=1) or (str(x).count('7')>=1)]
+    if len(d1)==len(d)==3 and len(d)==len(set(d)):
+        counter += 1
+        print(n, max (d),d)
+
+#--------------------28710--------------------
+# print("-------28710-------")
+# counter = 0
+# def mnoj(n):
+#     d=[]
+#     i=2
+#     while i**2<=n:
+#         while n%i==0: 
+#             d.append(i)
+#             n=n//i
+#         i+=1
+#     if n>1:
+#         d.append(n)
+#     return d
+# for n in range(3600001, 3600001+1000000):
+#     if counter == 5: break
+#     d=mnoj(n)
+#     d1=[int(x) for x in d if (str(x).count('3')>=1) and (str(x).count('5')>=1)]
+#     if len(d1)==len(d)==3:
+#         counter += 1
+#         print(n, max (d),d)
+
+#--------------------28709--------------------
+print("-------28709-------")
+counter = 0
+def mnoj(n):
+    d=[]
+    i=2
+    while i**2<=n:
+        while n%i==0: 
+            d.append(i)
+            n=n//i
+        i+=1
+    if n>1:
+        d.append(n)
+    return d
+for n in range(6300001, 6300001+1000000):
+    if counter == 5: break
+    d=mnoj(n)
+    d1=[int(x) for x in d if (str(x).count('3')>=1) or (str(x).count('4')>=1)]
+    if len(d1)==len(d)==3:
+        counter += 1
+        print(n, max (d),d)
+
+#--------------------28708--------------------
+print("-------28708-------")
+counter = 0
+def mnoj(n):
+    d=[]
+    i=2
+    while i**2<=n:
+        while n%i==0:
+            d.append(i)
+            n=n//i
+        i+=1
+    if n>1:
+        d.append(n)
+    return d
+
+for n in range(8929999,1,-1):
+    if counter == 5: break
+    d=mnoj(n)
+    if len(d) != 3: continue
+    d1=[int(x) for x in d if (str(x).count('3')>=1)]
+    if len(d1) == 1 and len(d)==len(set(d)):
+        counter += 1
+        print(n, d1[0],d)
+
+#--------------------28707--------------------
+print("-------28707-------")
+counter = 0
+
+def solver(n):
+    pokazatel = 0
+    found = False
+    for i in range(0,10):
+        for j in range(0,3000,2):
+            if n == (7**i + j**2):
+                pokazatel = i
+                found = True
+                break
+    if not found: return
+    return pokazatel
+
+
+for n in range(8699999,1,-1):
+    if counter == 5: break
+    strN = str(n)
+    if strN.count('1') == 0 and strN.count("3") == 0: continue
+    pokazatel = solver(n)
+    if not pokazatel: continue
+    counter += 1
+    print(n,pokazatel)
+
+
 #---------------------------------------------
