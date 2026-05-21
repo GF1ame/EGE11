@@ -116,13 +116,14 @@ def mnoj(n):
     d=[]
     i=2
     while i**2<=n:
-        while n%i==0: 
+        while n%i==0:
             d.append(i)
             n=n//i
         i+=1
     if n>1:
         d.append(n)
     return d
+
 for n in range(8929999,1,-1):
     if counter == 5: break
     d=mnoj(n)
@@ -158,6 +159,5 @@ for n in range(8699999,1,-1):
     counter += 1
     print(n,pokazatel)
 
-    
 
 #---------------------------------------------

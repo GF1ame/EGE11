@@ -52,7 +52,6 @@ for i in product(["А","Е","К","Н","О","Т",],repeat = 7):
     word = "".join(i)
     if word.count("О") == 2 and word.count("К") == 2 and word.count("Т") == 1 and word.count("Е") == 1 and word.count("Н") == 1:
         if counter % 2 == 0: continue
-        print(counter)
         bestPlacement = counter
 #print(bestPlacement)
 
@@ -63,6 +62,24 @@ for i in product(["Ч","И","С","Т","Ы","Й","Р","А","З","У","М",],repea
     if word.count("Й") > 1: continue
     counter += 1
 print(counter)
+
+#--------------------18260--------------------
+counter = 0
+for i in product(["0","1","2","3","4","5","6","7","8","9","A","B"],repeat = 6):
+    word = "".join(i)
+    if word.count("B") != 1 or word[0] == "0" : continue
+    chet = []
+    nechet = []
+    for i in word:
+        if i in "02468A":
+            chet.append(i)
+        else:
+            nechet.append(i)
+    if len(chet) != len(nechet): continue
+    counter += 1
+print(counter)
+
+    
 
 #---------------------------------------------
 

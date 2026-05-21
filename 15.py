@@ -26,6 +26,24 @@ for A in range(1000):
     if state:
         table.append(A)
 print(max(table))
+
+#--------------------16833--------------------
+
+def main(x,a1,a2):
+    P = 250<=x<=730
+    Q = 750<=x<=1180
+    A = a1<=x<=a2
+    return (A and (not(Q))) <= (P or Q)
+    
+
+maximum = 0
+for a1 in range(250,1180):
+    for a2 in range(a1+1,1181):
+        if all(main(x,a1,a2) for x in range(1000)):
+            maximum = max(maximum,a2-a1)
+print(maximum//10)
+
+
 #---------------------------------------------
 #OTHER
 

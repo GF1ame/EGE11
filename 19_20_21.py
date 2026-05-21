@@ -19,6 +19,20 @@ print("19_11277",[i for i in range(1,267) if F(i,2)])#replace 'all' to 'any' to 
 print("20_11277",[i for i in range(1,267) if not F(i,1) and F(i,3)][:2])
 print("21_11277",min([i for i in range(1,267) if not F(i,2) and F(i,4)]))
 
+#--------------------18124--------------------
+
+import math
+
+def F(n,m):
+   if n <= 33: return m%2==0
+   if m == 0: return 0
+   h = [F(n-3,m-1),F(n-5,m-1),F(math.ceil(n/3),m-1)]
+   return any(h) if (m-1) % 2 == 0 else all(h)
+
+print("19_18124",[i for i in range(34,500) if F(i,2)])
+print("20_18124",[i for i in range(34,500) if not F(i,1) and F(i,3)]) 
+print("21_18124",[i for i in range(34,500) if not F(i,2) and F(i,4)]) 
+
 #---------------------------------------------
 
 #OTHER

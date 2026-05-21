@@ -61,4 +61,34 @@ def main(start,end,st1,st2):
         a.append(main(funcs[i](start),end,st1,st2))
     return sum(a)
 print(main(4,15,False,False))
+
+#--------------------16332--------------------
+import math
+def minus4(n):
+    return n - 4
+def minus7(n):
+    return n - 7
+def root(n):
+    return math.floor(n ** 0.5)
+
+funcs = [
+    minus4,
+    minus7,
+    root,
+]
+
+def main(start,end,st1):
+    if start < end: return 0
+    if start == end:
+        if st1:
+            return 1
+        return 0
+    if start == 22:
+        st1 = True
+    a = []
+    for func in funcs:
+        a.append(main(func(start),end,st1))
+    return sum(a)
+print(main(44,3,False))
+
 #---------------------------------------------

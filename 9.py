@@ -31,7 +31,27 @@ for i in x:
     if sum(sortedI[:-1]) <= sortedI[-1]: continue
     if sortedI[0] + sortedI[-1] == sortedI[1] + sortedI[2] or sortedI[0] + sortedI[2] == sortedI[1] + sortedI[-1]: continue
     counter += 1
-print(counter)
+#print(counter)
+
+#--------------------18174--------------------
+
+f = open("Files/9_tasks/9_18174.txt")
+
+counter = 0
+
+for i in f:
+    i = sorted(list(map(int,i.split())))
+    if len(set(i)) + 1 != len(i): continue
+    minus = []
+    plus = []
+    for x in i:
+        if x < 0:
+            minus.append(x)
+        else:
+            plus.append(x)
+    if abs(sum(minus)) > sum(plus):
+        counter += 1
+print(counter) 
 
 #---------------------------------------------
 

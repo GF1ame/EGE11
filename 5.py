@@ -58,6 +58,20 @@ for N in range(1,1000):
     if R<=100:
         a.append(R)
 print(max(a))
+
+#--------------------19695---------------------
+
+a = []
+for N in range(1,1000):
+    binary = bin(N)[2:]
+    if N % 3 == 0:
+        binary = binary + binary[-2:]
+    else:
+        binary = "1" + binary + "1"
+    R = int(binary,2)
+    if R > 700:
+        a.append(R)
+print(min(a))
 #---------------------------------------------
 
 a = []

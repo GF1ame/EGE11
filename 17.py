@@ -46,4 +46,46 @@ for i in range(len(x)-2):
 
 print(len(a),max(a))
 
+#--------------------29971--------------------
+
+f = [int(x) for x in open("Files/17_tasks/17_29971.txt")]
+
+biggest33num = 0
+found = 0
+bestSum = 0
+
+for i in f:
+    if str(i)[-2:] == "33" and i > biggest33num:
+        biggest33num = i
+
+print(biggest33num)
+
+for i in range(len(f)-2):
+    nums = [f[i],f[i+1],f[i+2]]
+    double = [i for i in nums if len(str(abs(i))) == 2]
+    if len(double) != 2: continue
+    if sum(nums) ** 2 >= biggest33num: continue
+    found += 1
+    bestSum = max(bestSum,sum(nums))
+print(found,bestSum)
+
+#--------------------19119--------------------
+
+f = open("Files/17_tasks/17_19119.txt")
+
+f = [int(i) for i in f]
+
+minimum = min(f)
+bestSum = 0
+counter = 0
+
+for i in range(len(f)-1):
+    a1,a2 = f[i],f[i+1]
+    if a1%43 == minimum and a2%43 == minimum:
+        bestSum = max(bestSum,abs(a1-a2))
+        counter += 1
+print(counter,bestSum)
+
+
+
 #---------------------------------------------
