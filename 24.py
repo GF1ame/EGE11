@@ -108,91 +108,126 @@ bcCounter = 0
 # print(mx-1)
 
 #--------------------17756--------------------
-print("-------17756-------")
+# print("-------17756-------")
 
-n = open("Files/24_tasks/24_17756.txt").readline().replace("*","!").replace("+","!")
+# n = open("Files/24_tasks/24_17756.txt").readline().replace("*","!").replace("+","!")
 
-counter = 0
-bestCount = 0
-for i in range(len(n)-1):
-    if n[i]+n[i+1] == "!!":
-        bestCount = max(bestCount,counter)
-        counter = 0
-        continue
-    counter += 16
-print(bestCount+1)
+# counter = 0
+# bestCount = 0
+# for i in range(len(n)-1):
+#     if n[i]+n[i+1] == "!!":
+#         bestCount = max(bestCount,counter)
+#         counter = 0
+#         continue
+#     counter += 16
+# print(bestCount+1)
 
         
 
-for i in "AE": n = n.replace(i,"+")
-for i in "BCD": n = n.replace(i,"-")
+# for i in "AE": n = n.replace(i,"+")
+# for i in "BCD": n = n.replace(i,"-")
 
-mx = 1
-
-
-#--------------------27777--------------------
-from string import *
-
-n = open("Files/24_tasks/24_27777.txt").readline()
-
-for i in (ascii_uppercase + "0123456789"):
-    if i.isdigit() or i == "A" or i == "B": continue
-    n = n.replace(i," ")
-print(max([len(i) for i in n.split()]))
-
-#--------------------27634--------------------
-
-n = open("Files/24_tasks/24_27634.txt").readline()
+# mx = 1
 
 
-m = 2000
-a = ""
-zCounter = 0
-bestLen = 99999
+# #--------------------27777--------------------
+# from string import *
 
-start1 = time.perf_counter()
+# n = open("Files/24_tasks/24_27777.txt").readline()
+
+# for i in (ascii_uppercase + "0123456789"):
+#     if i.isdigit() or i == "A" or i == "B": continue
+#     n = n.replace(i," ")
+# print(max([len(i) for i in n.split()]))
+
+# #--------------------27634--------------------
+
+# n = open("Files/24_tasks/24_27634.txt").readline()
 
 
-for l in range(len(n)):
-    for r in range(m+l,l,-1):
-        a = n[l:r]
-        if a.count("Z") < 270:break
-        else: m = len(a) 
-print(m)
+# m = 2000
+# a = ""
+# zCounter = 0
+# bestLen = 99999
 
-end1 = time.perf_counter()
-print(f"Время выполнения: {end1 - start1:.6f} секунд")
+# start1 = time.perf_counter()
 
-start2 = time.perf_counter()
 
-for l in range(len(n)):
-    a += n[l]
-    if a[-1] == "Z": zCounter += 1        
-    while zCounter >= 270:
-        bestLen = min(bestLen,len(a))
-        if a[0] == "Z": zCounter -= 1
-        a = a[1:]
-print(bestLen)
+# for l in range(len(n)):
+#     for r in range(m+l,l,-1):
+#         a = n[l:r]
+#         if a.count("Z") < 270:break
+#         else: m = len(a) 
+# print(m)
 
-end2 = time.perf_counter()
-print(f"Время выполнения: {end2 - start2:.6f} секунд")
+# end1 = time.perf_counter()
+# print(f"Время выполнения: {end1 - start1:.6f} секунд")
+
+# start2 = time.perf_counter()
+
+# for l in range(len(n)):
+#     a += n[l]
+#     if a[-1] == "Z": zCounter += 1        
+#     while zCounter >= 270:
+#         bestLen = min(bestLen,len(a))
+#         if a[0] == "Z": zCounter -= 1
+#         a = a[1:]
+# print(bestLen)
+
+# end2 = time.perf_counter()
+# print(f"Время выполнения: {end2 - start2:.6f} секунд")
 
 #--------------------------------------------
 
-l = 0
-m = 0
-n = open("Files/24_tasks/24-241.txt").readline()
-for r in range(len(n)):
-    if n[r] == "O" and n[l] == "O":
-        while n[l:r].count("F") > 2:
-            l += 1
-        m = max(m,r-l+1)
-    if n[l]!="O": l += 1
-print(m)
+# l = 0
+# m = 0
+# n = open("Files/24_tasks/24-241.txt").readline()
+# for r in range(len(n)):
+#     if n[r] == "O" and n[l] == "O":
+#         while n[l:r].count("F") > 2:
+#             l += 1
+#         m = max(m,r-l+1)
+#     if n[l]!="O": l += 1
+# print(m)
+
+#--------------------29354--------------------
+
+# f = open("Files/24_tasks/24_29354.txt").readline()
+
+# a = ''
+# l = 0
+# mx = 0
+# bcCounter = 0
+
+# for r in range(len(f)):
+#     if a[-2:] == "BC":
+#         bcCounter += 1
+#     while bcCounter>190:
+#         if a[:2] == "BC":
+#             bcCounter -= 1
+#         l += 1
+#         a = f[l:r]
+#     a = f[l:r]
+#     if bcCounter == 190:
+#         mx = max(len(a),mx)
+# print(mx-1)
+#--------------------28943--------------------
+
+f = open("Files/24_tasks/24_28943.txt").readline()
+for i in "AEIOUY" : f = f.replace(i,"*")
 
 
+a = ''
+minimum = 10000
+
+for r in range(len(f)):
+    a += f[r]
+    while a.count("20") > 26:
+        a = a[1:]
+    if a.count("*") == 1 and a[-1] == "*" and a.count("20") == 26:
+        minimum = min(len(a),minimum)
+print(minimum-1)
 
 
- 
 #--------------------------------------------
 
