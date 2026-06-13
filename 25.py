@@ -134,30 +134,62 @@ for n in range(8929999,1,-1):
         print(n, d1[0],d)
 
 #--------------------28707--------------------
-print("-------28707-------")
+# print("-------28707-------")
+# counter = 0
+
+# def solver(n):
+#     pokazatel = 0
+#     found = False
+#     for i in range(0,10):
+#         for j in range(0,3000,2):
+#             if n == (7**i + j**2):
+#                 pokazatel = i
+#                 found = True
+#                 break
+#     if not found: return
+#     return pokazatel
+
+
+# for n in range(8699999,1,-1):
+#     if counter == 5: break
+#     strN = str(n)
+#     if strN.count('1') == 0 and strN.count("3") == 0: continue
+#     pokazatel = solver(n)
+#     if not pokazatel: continue
+#     counter += 1
+#     print(n,pokazatel)
+
+#--------------------28944--------------------
+print("-------28944-------")
 counter = 0
+def mnoj(n):
+    d=[]
+    i=2
+    while i**2<=n:
+        while n%i==0:
+            d.append(i)
+            n=n//i
+        i+=1
+    if n>1:
+        d.append(n)
+    return d
 
-def solver(n):
-    pokazatel = 0
-    found = False
-    for i in range(0,10):
-        for j in range(0,3000,2):
-            if n == (7**i + j**2):
-                pokazatel = i
-                found = True
-                break
-    if not found: return
-    return pokazatel
-
-
-for n in range(8699999,1,-1):
+for n in range(8996452,10**10):
     if counter == 5: break
-    strN = str(n)
-    if strN.count('1') == 0 and strN.count("3") == 0: continue
-    pokazatel = solver(n)
-    if not pokazatel: continue
-    counter += 1
-    print(n,pokazatel)
+    d=mnoj(n)
+    if len(d) != 2: continue
+    d1=[int(x) for x in d if (str(x).count('3')==2)]
+    if len(d1) == 2:
+        counter += 1
+        print(n, max(d1),d)
 
+#--------------------29355--------------------
+print("-------29355-------")
+
+from fnmatch import *
+
+for i in range(0,10**10,9874):
+    if fnmatch(str(i),"89*6?7?9?"):
+        print(i,i/9874)
 
 #---------------------------------------------
