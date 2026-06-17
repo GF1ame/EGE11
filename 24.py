@@ -213,21 +213,52 @@ bcCounter = 0
 # print(mx-1)
 #--------------------28943--------------------
 
-f = open("Files/24_tasks/24_28943.txt").readline()
-for i in "AEIOUY" : f = f.replace(i,"*")
+# f = open("Files/24_tasks/24_28943.txt").readline()
+# for i in "AEIOUY" : f = f.replace(i,"*")
 
 
-a = ''
-minimum = 10000
+# a = ''
+# minimum = 10000
+
+# for r in range(len(f)):
+#     a += f[r]
+#     while a.count("20") > 26:
+#         a = a[1:]
+#     if a.count("*") == 1 and a[-1] == "*" and a.count("20") == 26:
+#         minimum = min(len(a),minimum)
+# print(minimum-1)
+#--------------------28005--------------------
+
+# f = open("Files/24_tasks/24_28005.txt").readline()
+
+# from re import *
+
+# reg = r"[A-Z|a-z|0-9|.]+@((yandex.ru)|(gmail.com))"
+
+# mx = 0
+# for x in finditer(reg,f):
+#     mx = max(len(x.group()),mx)
+# print(mx)
+
+#--------------------26549--------------------
+
+f = open("Files/24_tasks/24_26549.txt").readline()
+s = ""
+l = 0
+
+starAmount = 0
+maxSymbols = 0
 
 for r in range(len(f)):
-    a += f[r]
-    while a.count("20") > 26:
-        a = a[1:]
-    if a.count("*") == 1 and a[-1] == "*" and a.count("20") == 26:
-        minimum = min(len(a),minimum)
-print(minimum-1)
-
+    s += f[r]
+    if s[-4:] == "2025":
+        starAmount += 1
+    while starAmount > 50:
+        if s[:4] == "2025":
+            starAmount -= 1
+        s = s[1:]
+    if s[-4:] == "2025":
+        maxSymbols = max(len(s),maxSymbols)
+print(maxSymbols)
 
 #--------------------------------------------
-

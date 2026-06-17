@@ -53,4 +53,13 @@ for a in range(2):
                 if f: continue
                 print(a,b,c,d)
 
+#--------------------29553-------------------
+print("x y z w")
+for x in range(2):
+    for y in range(2):
+        for z in range(2):
+            for w in range(2):
+                f = not((x<=w) <= (w == z)) and y
+                if not f: continue
+                print(x,y,z,w)
 #--------------------------------------------
