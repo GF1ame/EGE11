@@ -12,7 +12,7 @@
 
 #--------------------24048--------------------
 
-Alphabet = { 
+Alphabet = {
     "A" : 10,
     "B" : 11,
     "C" : 12,
@@ -65,6 +65,38 @@ def system(num):
 for x in range(5556):
     if system(5 ** 150 + 5 ** 135 - x).count("4") == 134:
         print(x)
+
+#--------------------29968--------------------
+
+# def system(num):
+#     string = ""
+#     while num > 0:
+#         if (num % 11) in alph:
+#             string = alph[num%11] + string
+#         else:
+#             string = str(num % 11) + string
+#         num //= 11
+#     return string
+# print(system(21))
+
+# for x in range(3000):
+#     num = 9 * 11**210 + 8*11**150 - x
+#     if system(num).count("0") == 60:
+#         print(x)
+
+def solve():
+    for x in range(40):
+        a = 8 * 40**6 + 7 * 40 **5 + 1 * 40**4 + x * 40**3 + 2 * 40**2 + 9*40**1 + 1
+        b = 3 * 40**6 + 6 * 40 **5 + 6 * 40**4 + x * 40**3 + 6 * 40**2 + 3*40**1 + 1
+        c = 9 * 40**6 + 7 * 40 **5 + 3 * 40**4 + x * 40**3 + 6 * 40**2 + 1*40**1 + 8
+
+        value = a + b + c
+
+        if value % 39 == 0:
+            print(value // 13)
+            break
+
+solve()
 
 #---------------------------------------------
 
