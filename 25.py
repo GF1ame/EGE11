@@ -192,4 +192,30 @@ for i in range(0,10**10,9874):
     if fnmatch(str(i),"89*6?7?9?"):
         print(i,i/9874)
 
+#--------------------26557--------------------
+print("-------26557-------")
+
+def mnoj(num):
+    d = []
+    i = 2
+    while i ** 2<=num:
+        while num % i==0:
+            d.append(i)
+            num //= i
+        i += 1
+    if num > 1:
+        d.append(num)
+    return d
+
+counter = 0
+
+for i in range(7_800_000,100_000_000):
+    if counter == 5: break
+    mnojitels = mnoj(i)
+    sortedMnoj = sorted(mnojitels)
+    M = min(sortedMnoj) + max(sortedMnoj)
+    if str(M)[-2:] != "63" or M % len(set(mnojitels)) != 0 : continue
+    counter += 1
+    print(i,M)
 #---------------------------------------------
+
