@@ -61,7 +61,7 @@ for i in product(["Ч","И","С","Т","Ы","Й","Р","А","З","У","М",],repea
     word = "".join(i)
     if word.count("Й") > 1: continue
     counter += 1
-print(counter)
+# print(counter)
 
 #--------------------18260--------------------
 counter = 0
@@ -77,9 +77,18 @@ for i in product(["0","1","2","3","4","5","6","7","8","9","A","B"],repeat = 6):
             nechet.append(i)
     if len(chet) != len(nechet): continue
     counter += 1
-print(counter)
+# print(counter)
 
-    
+#--------------------29340--------------------
+counter = 0
+for i in product(["А","Е","Л","П","Р","Ь"],repeat=6):
+    counter += 1
+    word = "".join(i)
+    if not word[0] in "АЛ":
+        if word.count("П") >= 2:
+            if counter % 2 != 0:
+                print(counter)
+                break
 
 #---------------------------------------------
 
@@ -139,7 +148,3 @@ print(counter)
 #     if not valid: continue
 #     counter += 1
 # print(counter)
-
-
-    
-

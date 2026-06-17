@@ -51,7 +51,28 @@ for i in f:
             plus.append(x)
     if abs(sum(minus)) > sum(plus):
         counter += 1
-print(counter) 
+# print(counter) 
+
+#--------------------29962--------------------
+
+f = open("Files/9_tasks/9_29962.txt")
+counter = 0
+maxCounter = 0
+for i in f:
+    counter += 1
+    i = list(map(int,i.split()))
+    duplicates = []
+    notDuplicates = []
+    if any([i.count(j) == 3 for j in i]) and len(set(i)) == 5:
+        for j in i:
+            if i.count(j) > 1:
+                duplicates.append(j)
+            else:
+                notDuplicates.append(j)
+        if sum(notDuplicates)/4 > duplicates[0]:
+            maxCounter = max(counter,maxCounter)
+            print(duplicates,notDuplicates)
+print(maxCounter)
 
 #---------------------------------------------
 

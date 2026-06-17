@@ -72,6 +72,29 @@ for N in range(1,1000):
     if R > 700:
         a.append(R)
 print(min(a))
+
+#--------------------29956---------------------
+
+def triple(num):
+    newStr = ""
+    while num > 0:
+        newStr = str(num % 3) + newStr
+        num //= 3
+    return newStr
+
+a = []
+for N in range(1,1000):
+    trio = triple(N)
+    if N % 3 == 0:
+        trio = "1" + trio + "02"
+    else:
+        trio += triple((N % 3) * 5)
+    R = int(trio,3)
+    if R >= 177:
+        a.append(N)
+print(min(a))
+
+
 #---------------------------------------------
 
 a = []

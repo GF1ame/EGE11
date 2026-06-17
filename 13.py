@@ -26,3 +26,16 @@ for i in net:
         counter += 1
 print(counter)
     
+
+
+
+
+from ipaddress import *
+
+network = ip_network("190.202.83.62/255.255.252.0",0)
+
+maxIp = 0
+for x in network.hosts():
+    x = str(x)
+    maxIp = sum(list(map(int,x.split('.'))))
+print(maxIp)
