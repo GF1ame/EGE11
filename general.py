@@ -529,3 +529,62 @@
 #             return f(n+1)*f(n+2)
 #         return (n+2)/f(n+2)
 # print(f(10)/f(38))
+
+# def F(a1,a2,s):
+#     if a1 + a2 >= 154: return s % 2 == 0 
+#     if s == 0: return 0
+#     h = [F(a1 + 4,a2,s-1),F(a1,a2 + 4,s-1),F(a1 * 2,a2,s-1),F(a1,a2 * 2,s-1)]
+#     return any(h) if (s-1) % 2 == 0 else all(h)
+
+# print("19",min([i for i in range(1,143) if F(11,i,2)])) #36
+# print("20",[i for i in range(1,143) if not F(11,i,1) and F(11,i,3)])
+# print("21",[i for i in range(1,143) if not F(11,i,2) and F(11,i,4)])
+
+
+# def A(num):
+#     return num - 1
+# def B(num):
+#     return num // 2
+
+# funcs = {
+#     A : A,
+#     B : B,
+# }
+
+# def main(start,target,includes15):
+#     if start < target:
+#         return 0
+#     if start == target:
+#         if includes15:
+#             return 1
+#         return 0
+#     if start == 15:
+#         includes15 = True
+#     summa = sum([main(func(start),target,includes15) for func in funcs.values()])
+#     return summa
+
+
+# print(main(40,6,False))
+
+# def solve(num):
+#     d = []
+#     i = 2
+#     while i ** 2 < num:
+#         while num % i == 0:
+#             d.append(i)
+#             num //= i
+#         i += 1
+#     if num > 1:
+#         d.append(num)
+#     return d
+
+# counter = 0
+# for i in range(7_513_048,100_000_000):
+#     if counter == 5: break
+#     dels = solve(i)
+#     if len(dels) != 2: continue
+#     if not all([(str(i).count("1") > 0 and str(i).count("6") > 0) for i in dels]): continue
+#     print(i,max(dels))
+#     counter += 1
+
+
